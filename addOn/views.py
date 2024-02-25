@@ -35,3 +35,7 @@ class RegPageView(CreateView):
     model = RegModel
     form_class = RegForm
     success_url = '/'
+
+
+class DemoPageView(TemplateView):
+    template_name = 'demo.html'

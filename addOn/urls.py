@@ -19,13 +19,14 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
-from addOn.views import AboutUsPageView, CreateContactView, HomePageView, LoginPageView, RegPageView
+from addOn.views import AboutUsPageView, CreateContactView, HomePageView, LoginPageView, RegPageView, DemoPageView
 
 urlpatterns = [path('about', AboutUsPageView.as_view(), name='aboutus_page'),
                path('contact', CreateContactView.as_view(), name='contact_page'),
                path('', HomePageView.as_view(), name='home_page'),
                path('login', LoginPageView.as_view(), name='login_page'),
-               path('register', RegPageView.as_view(), name='reg_page')
+               path('register', RegPageView.as_view(), name='reg_page'),
+               path('demo', DemoPageView.as_view(), name='demo_page')
                ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
